@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mzw-2T-hkn">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ESn-K4-DY6">
+            <objects>
+                <viewController id="Mzw-2T-hkn" customClass="ViewController" customModule="ElementQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yoh-E9-9u2">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rmi-Dk-lmQ">
+                                <rect key="frame" x="125" y="170" width="140" height="140"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="jKY-Oj-K71">
+                                <rect key="frame" x="8" y="332" width="374" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="rG1-9T-YI9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Nnf-XC-x6x">
+                                <rect key="frame" x="103" y="65" width="184" height="32"/>
+                                <segments>
+                                    <segment title="Flash Cards"/>
+                                    <segment title="Quiz"/>
+                                </segments>
+                                <connections>
+                                    <action selector="switchModes:" destination="Mzw-2T-hkn" eventType="valueChanged" id="a8j-Hx-OI7"/>
+                                </connections>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GKW-6F-a2c">
+                                <rect key="frame" x="125" y="428" width="140" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Mzw-2T-hkn" id="11s-PV-lYg"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEs-8X-0wr">
+                                <rect key="frame" x="69" y="499" width="93" height="30"/>
+                                <state key="normal" title="Show Answer"/>
+                                <connections>
+                                    <action selector="showAnswer:" destination="Mzw-2T-hkn" eventType="touchUpInside" id="niT-Fg-OO7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="guI-dS-ka8">
+                                <rect key="frame" x="240" y="499" width="92" height="30"/>
+                                <state key="normal" title="Next Element"/>
+                                <connections>
+                                    <action selector="next:" destination="Mzw-2T-hkn" eventType="touchUpInside" id="2yA-Hg-PrT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yHN-pA-J59"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="guI-dS-ka8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aEs-8X-0wr" secondAttribute="trailing" constant="8" symbolic="YES" id="7Uq-7P-tFj"/>
+                            <constraint firstItem="Nnf-XC-x6x" firstAttribute="top" secondItem="yHN-pA-J59" secondAttribute="top" constant="6" id="Ao0-IS-ZZO"/>
+                            <constraint firstItem="jKY-Oj-K71" firstAttribute="top" secondItem="yoh-E9-9u2" secondAttribute="top" constant="332" id="Bc0-Ig-wCT"/>
+                            <constraint firstItem="yHN-pA-J59" firstAttribute="trailing" secondItem="jKY-Oj-K71" secondAttribute="trailing" constant="11" id="DO5-G6-1vM"/>
+                            <constraint firstItem="aEs-8X-0wr" firstAttribute="top" secondItem="GKW-6F-a2c" secondAttribute="bottom" constant="37" id="Egq-C7-Onh"/>
+                            <constraint firstItem="Nnf-XC-x6x" firstAttribute="centerX" secondItem="rmi-Dk-lmQ" secondAttribute="centerX" id="GKO-mh-m5l"/>
+                            <constraint firstItem="jKY-Oj-K71" firstAttribute="top" secondItem="rmi-Dk-lmQ" secondAttribute="bottom" constant="22" id="GoE-ro-ea4"/>
+                            <constraint firstItem="Nnf-XC-x6x" firstAttribute="leading" secondItem="yHN-pA-J59" secondAttribute="leading" constant="103" id="N68-wy-NJf"/>
+                            <constraint firstItem="aEs-8X-0wr" firstAttribute="baseline" secondItem="guI-dS-ka8" secondAttribute="baseline" id="QAW-3g-xdU"/>
+                            <constraint firstItem="rmi-Dk-lmQ" firstAttribute="leading" secondItem="GKW-6F-a2c" secondAttribute="leading" id="S7j-jj-mAj"/>
+                            <constraint firstItem="jKY-Oj-K71" firstAttribute="leading" secondItem="yHN-pA-J59" secondAttribute="leading" constant="8" id="Wc0-q1-a2Q"/>
+                            <constraint firstItem="yHN-pA-J59" firstAttribute="trailing" secondItem="guI-dS-ka8" secondAttribute="trailing" constant="61" id="fYa-Ck-KdG"/>
+                            <constraint firstItem="jKY-Oj-K71" firstAttribute="centerX" secondItem="GKW-6F-a2c" secondAttribute="centerX" id="gNI-d2-Gja"/>
+                            <constraint firstItem="jKY-Oj-K71" firstAttribute="centerX" secondItem="Nnf-XC-x6x" secondAttribute="centerX" id="jEG-sA-nBW"/>
+                            <constraint firstItem="GKW-6F-a2c" firstAttribute="top" secondItem="jKY-Oj-K71" secondAttribute="bottom" constant="37" id="kb7-cb-Fzb"/>
+                            <constraint firstItem="jKY-Oj-K71" firstAttribute="centerX" secondItem="rmi-Dk-lmQ" secondAttribute="centerX" id="muF-jB-4fp"/>
+                            <constraint firstItem="rmi-Dk-lmQ" firstAttribute="top" secondItem="Nnf-XC-x6x" secondAttribute="bottom" constant="74" id="pdP-cJ-RI5"/>
+                            <constraint firstItem="rmi-Dk-lmQ" firstAttribute="leading" secondItem="yHN-pA-J59" secondAttribute="leading" constant="125" id="yyz-Q3-c6d"/>
+                            <constraint firstItem="aEs-8X-0wr" firstAttribute="leading" secondItem="yHN-pA-J59" secondAttribute="leading" constant="69" id="ztj-0X-LIS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="answerLabel" destination="jKY-Oj-K71" id="wCz-cq-jqe"/>
+                        <outlet property="imageView" destination="rmi-Dk-lmQ" id="PeS-9Z-b6G"/>
+                        <outlet property="modeSelector" destination="Nnf-XC-x6x" id="bQA-gH-UeW"/>
+                        <outlet property="nextButton" destination="guI-dS-ka8" id="6qv-3x-gBR"/>
+                        <outlet property="showAnswer" destination="aEs-8X-0wr" id="DAw-p1-jDx"/>
+                        <outlet property="textField" destination="GKW-6F-a2c" id="Zgv-d9-s4O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cRx-5Z-Edt" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
