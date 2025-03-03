@@ -34,6 +34,7 @@ A simple Tic Tac Toe game for two players, where they take turns marking X and O
 ## Technologies Used 🔧
 - **Swift**
 - **SwiftUI**
+- **Storyboard**
 - **CoinGecko API** (used in CryptoTracker for fetching cryptocurrency data)
 
 ## Features 🌟
