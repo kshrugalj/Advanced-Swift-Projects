@@ -48,7 +48,7 @@ To get started with any of the projects, follow these steps:
 
 1. **Clone this repository**:
     ```bash
-    git clone https://github.com/yourusername/advanced-swift-projects.git
+    git clone https://github.com/kshrugalj/advanced-swift-projects.git
     ```
 
 2. **Open the project** in **Xcode**:
